@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View, Dimensions} from 'react-native';
-import Btn from './src/components/Btn';
+import Btn from '../components/Btn';
 const {width, height} = Dimensions.get('window');
-const App = ({navigation}) => {
+const Main = ({navigation}) => {
   const [isSelected, setIsSelected] = useState(false);
   return (
     <View style={styles.container}>
@@ -26,7 +26,7 @@ const App = ({navigation}) => {
   );
 };
 
-export default App;
+export default Main;
 
 const styles = StyleSheet.create({
   container: {
