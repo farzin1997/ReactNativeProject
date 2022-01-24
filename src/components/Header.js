@@ -1,12 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, View, Dimensions, Pressable} from 'react-native';
+import {StyleSheet, View, Text, Dimensions, Pressable} from 'react-native';
+import Icon from 'react-native-vector-icons/dist/Ionicons';
+
 const {width, height} = Dimensions.get('window');
 
 const Header = ({headerText, press}) => {
   return (
-    <Pressable style={styles.headerStyle} onPress={press}>
+    <View style={styles.headerStyle}>
+      <Pressable style={{padding: 5}} onPress={press}>
+        <Icon name="arrow-back" size={25} color="#900" />
+      </Pressable>
       <Text style={styles.headerText}>{headerText}</Text>
-    </Pressable>
+    </View>
   );
 };
 
@@ -15,11 +20,13 @@ export default Header;
 const styles = StyleSheet.create({
   headerStyle: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: 'lightgreen',
     width: width,
     height: 50,
+    paddingHorizontal: 20,
+    elevation: 1,
   },
   headerText: {
     color: 'black',
