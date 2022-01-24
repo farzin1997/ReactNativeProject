@@ -1,47 +1,20 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View, Dimensions} from 'react-native';
-import Btn from './src/components/Btn';
-const {width, height} = Dimensions.get('window');
-const App = ({navigation}) => {
-  const [isSelected, setIsSelected] = useState(false);
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Main from './src/screen/Main';
+import First from './src/screen/FirstProject/First';
+
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <View>
-        <Text
-          onPress={() => setIsSelected(!isSelected)}
-          style={[
-            styles.headerText,
-            {backgroundColor: isSelected ? 'lightgreen' : 'pink'},
-          ]}>
-          تمرین ها
-        </Text>
-      </View>
-      <View style={{width: width, alignItems: 'center'}}>
-        <Btn color={'white'} value={'تقویم'} />
-        <Btn color={'white'} value={'مپ'} />
-        <Btn color={'white'} value={'salam'} />
-        <Btn color={'white'} value={'salam'} />
-      </View>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="First" component={First} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    backgroundColor: 'violet',
-  },
-  headerText: {
-    color: 'black',
-    fontSize: 24,
-    marginVertical: 10,
-    borderRadius: 9,
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    elevation: 3,
-    paddingVertical: 5,
-  },
-});
