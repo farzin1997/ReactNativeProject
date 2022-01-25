@@ -27,14 +27,23 @@ const ScrollViews = () => {
     {id: 13, language: 'php'},
     {id: 14, language: 'c#'},
   ]);
+  const deleteLanguage = id => {
+    const filtered = list.filter(item => item.id != id);
+    setList(filtered);
+    console.log('filter:', filtered);
+    //یا اینجوری
+    //setList((prevState)=>prevState.filter(item => item.id != id))
+  };
   return (
     <View style={styles.container}>
       <FlatList
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={item => item.id}
         data={list}
         numColumns={2}
         renderItem={({item}) => (
-          <Text style={styles.card}>{item.language}</Text>
+          <Text onPress={() => deleteLanguage(item.id)} style={styles.card}>
+            {item.language}
+          </Text>
         )}
       />
     </View>
