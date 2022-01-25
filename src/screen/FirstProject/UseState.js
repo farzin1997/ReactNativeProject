@@ -6,29 +6,16 @@ const UseState = () => {
   const [flutter, setFlutter] = useState('Flutter');
   const [click, setClick] = useState(true);
   const [click2, setClick2] = useState(false);
-  const handle = () => {
-    if (click == false && click2 == false) {
-      null;
-    } else if (click == true && click2 == false) {
-      react;
-    } else if (click == false && click2 == true) {
-      flutter;
-    } else {
-      null;
-    }
-    console.log('************');
-    console.log('handle', handle);
-    console.log('handle', click, click2);
-    console.log('************');
-  };
+  const [routerTab, setRouterTab] = useState(0);
+
   return (
     <View style={styles.container}>
       <Text style={{color: 'black', fontSize: 16}}>
         به نظر شما react native بهتره یا flutter؟
       </Text>
-      {/* <View style={styles.row}>
+      <View style={styles.row}>
         <Text
-          onPress={() => setClick(!click)}
+          onPress={() => setRouterTab(1)}
           style={[
             styles.text,
             {
@@ -39,7 +26,7 @@ const UseState = () => {
           {react}
         </Text>
         <Text
-          onPress={() => setClick2(!click2)}
+          onPress={() => setRouterTab(2)}
           style={[
             styles.text,
             {
@@ -49,10 +36,10 @@ const UseState = () => {
           ]}>
           {flutter}
         </Text>
-      </View> */}
-      {/* {click ? <Text>{react} قطعا </Text> : null}
-      {click2 ? <Text>{flutter} قطعا </Text> : null} */}
-      <Text
+      </View>
+      {routerTab == 1 && <Text style={{color:'darkblue'}}>{react}  خب قطعا  </Text>}
+      {routerTab == 2 && <Text style={{color:'darkred'}}>{flutter} خب قطعا</Text>}
+      {/* <Text
         onPress={() => setClick(!click)}
         style={[
           styles.text,
@@ -62,7 +49,7 @@ const UseState = () => {
           },
         ]}>
         {click ? 'React Native' : 'Flutter'}
-      </Text>
+      </Text> */}
     </View>
   );
 };

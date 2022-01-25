@@ -7,6 +7,8 @@ import {
   View,
   FlatList,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/dist/Ionicons';
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const {width, height} = Dimensions.get('window');
 
@@ -41,9 +43,12 @@ const ScrollViews = () => {
         data={list}
         numColumns={2}
         renderItem={({item}) => (
-          <Text onPress={() => deleteLanguage(item.id)} style={styles.card}>
-            {item.language}
-          </Text>
+          <Pressable
+            onPress={() => deleteLanguage(item.id)}
+            style={styles.card}>
+            <Text style={{color: 'black', fontSize: 16}}>{item.language}</Text>
+            <Icon name="trash" size={25} color="#900" />
+          </Pressable>
         )}
       />
     </View>
@@ -67,16 +72,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: width,
-    backgroundColor: 'skyblue',
+    backgroundColor: 'white',
     alignItems: 'center',
   },
   card: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row',
     width: width / 3,
     paddingHorizontal: 10,
     paddingVertical: 15,
-    textAlign: 'center',
+    // textAlign: 'center',
     marginVertical: 10,
-    backgroundColor: 'teal',
+    backgroundColor: 'skyblue',
     borderRadius: 4,
     borderWidth: 1,
     borderColor: 'blue',
