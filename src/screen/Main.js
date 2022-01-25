@@ -37,7 +37,7 @@ const Main = ({navigation}) => {
           renderItem={({item}) => (
             <Btn
               value={item.title}
-              otherStyles={{marginHorizontal:10}}
+              otherStyles={{marginHorizontal: 10}}
               onPress={() => navigation.navigate(item.onPress)}
             />
           )}
