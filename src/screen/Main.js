@@ -18,15 +18,14 @@ const Main = ({navigation}) => {
       </View>
       <View style={{width: width, alignItems: 'center'}}>
         <Btn
-          color={'white'}
-          value={'firstProject'}
+          value={'first practice'}
           onPress={() => navigation.navigate('First')}
         />
-        <Btn color={'white'} value={'تقویم'} />
-        <Btn color={'white'} value={'مپ'} />
-        <Btn color={'white'} value={'چند زبانه'} />
-        <Btn color={'white'} value={'redux'} />
-        <Btn color={'white'} value={'context'} /> 
+        <Btn value={'تقویم'} />
+        <Btn value={'مپ'} />
+        <Btn value={'چند زبانه'} />
+        <Btn value={'redux'} />
+        <Btn value={'context'} />
       </View>
     </View>
   );
