@@ -6,13 +6,24 @@ import Btn from '../../components/Btn';
 const {width, height} = Dimensions.get('window');
 const First = ({navigation}) => {
   return (
-    <View>
+    <View style={{flex: 1}}>
       <Header headerText={'First practice'} press={() => navigation.goBack()} />
-      <Text>first</Text>
       <View style={styles.body}>
-        <Btn value={'textInput'} otherStyles={styles.btn} />
-        <Btn value={'textInput'} otherStyles={styles.btn} />
-        <Btn value={'textInput'} otherStyles={styles.btn} />
+        <Btn
+          value={'useState'}
+          otherStyles={styles.btn}
+          onPress={() => navigation.navigate('UseState')}
+        />
+        <Btn
+          value={'textInput'}
+          otherStyles={styles.btn}
+          onPress={() => navigation.navigate('TextInput')}
+        />
+        <Btn
+          value={'ScrollView'}
+          otherStyles={styles.btn}
+          onPress={() => navigation.navigate('ScrollViews')}
+        />
       </View>
     </View>
   );
@@ -23,13 +34,14 @@ export default First;
 const styles = StyleSheet.create({
   btn: {
     width: width / 3.5,
-    backgroundColor: 'teal',
+    backgroundColor: 'hotpink',
   },
   body: {
+    marginTop: 15,
     flexDirection: 'row',
     width: width,
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
   },
 });
