@@ -4,11 +4,16 @@ import Icon from 'react-native-vector-icons/dist/Ionicons';
 
 const {width, height} = Dimensions.get('window');
 
-const Header = ({headerText, press}) => {
+const Header = ({
+  headerText,
+  onPress,
+  backgroundColor = 'lightgreen',
+  iconColor = '#900',
+}) => {
   return (
-    <View style={styles.headerStyle}>
-      <Pressable style={{padding: 5}} onPress={press}>
-        <Icon name="arrow-back" size={25} color="#900" />
+    <View style={[styles.headerStyle, {backgroundColor}]}>
+      <Pressable style={{padding: 5}} onPress={onPress}>
+        <Icon name="arrow-back" size={25} color={iconColor} />
       </Pressable>
       <Text style={styles.headerText}>{headerText}</Text>
     </View>
@@ -22,7 +27,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: 'lightgreen',
     width: width,
     height: 50,
     paddingHorizontal: 20,

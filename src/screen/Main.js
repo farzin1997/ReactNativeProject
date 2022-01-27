@@ -8,7 +8,8 @@ const Main = ({navigation}) => {
   const [isSelected, setIsSelected] = useState(false);
   const [list, setList] = useState([
     {id: 1, title: 'first practice', onPress: 'First'},
-    {id: 2, title: 'تقویم', onPress: 'TextInput'},
+    {id: 2, title: 'Person manager', onPress: 'PersonManager'},
+    {id: 2, title: 'تقویم', onPress: ''},
     {id: 3, title: 'مپ'},
     {id: 4, title: 'چند زبانه'},
     {id: 5, title: 'redux'},
@@ -16,6 +17,7 @@ const Main = ({navigation}) => {
     {id: 7, title: 'graphQl'},
     {id: 8, title: 'restfullApi'},
     {id: 8, title: 'tic tac toe'},
+    {id: 8, title: 'chat'},
   ]);
   return (
     <View style={styles.container}>

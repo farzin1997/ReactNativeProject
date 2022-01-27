@@ -10,7 +10,7 @@ const First = ({navigation}) => {
   const [routerTab, setRouterTab] = useState(0);
   return (
     <View style={{flex: 1}}>
-      <Header headerText={'First practice'} press={() => navigation.goBack()} />
+      <Header headerText={'First practice'} onPress={() => navigation.goBack()} />
       <View style={styles.customTab}>
         <Btn
           color={routerTab == 1 ? 'white' : 'black'}
