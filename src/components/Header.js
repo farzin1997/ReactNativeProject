@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
   headerText: {
     color: 'black',
     fontSize: 15,
-    fontWeight: 'bold',
+    fontFamily:'byekan'
   },
 });

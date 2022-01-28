@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   FlatList,
-  StyleSheet,
   View,
   Keyboard,
   Alert,
@@ -10,14 +9,10 @@ import {
 import Header from '../../components/Header';
 import AddPerson from './components/AddPerson';
 import Persons from './components/Persons';
+import {styles} from './components/style/globalStyles';
 
 const PersonManager = ({navigation}) => {
-  const [persons, setPersons] = useState([
-    {fullName: 'فرزین فدائیان', key: '1', isCompleted: false},
-    {fullName: 'متین فدائیان', key: '2', isCompleted: false},
-    {fullName: 'محمد رضا پیری', key: '3', isCompleted: false},
-    {fullName: 'احمدرضا کزازی', key: '4', isCompleted: false},
-  ]);
+  const [persons, setPersons] = useState([]);
   const [person, setPerson] = useState('');
 
   const deletedHandler = key => {
@@ -71,6 +66,7 @@ const PersonManager = ({navigation}) => {
           />
           <View style={styles.items}>
             <FlatList
+              showsVerticalScrollIndicator={false}
               keyExtractor={item => item.key}
               data={persons}
               renderItem={({item}) => (
@@ -89,20 +85,3 @@ const PersonManager = ({navigation}) => {
 };
 
 export default PersonManager;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  body: {
-    flex: 1,
-    alignItems: 'center',
-    paddingTop: 20,
-  },
-  items: {
-    flex: 1,
-    marginTop: 20,
-    alignItems: 'center',
-  },
-});
