@@ -1,11 +1,10 @@
 import React from 'react';
-import {StyleSheet, TextInput, View, Dimensions, Button} from 'react-native';
-
-const {width, height} = Dimensions.get('window');
+import { TextInput, View, Button} from 'react-native';
+import {styles} from './style/globalStyles';
 
 const AddPerson = ({submitHandler, person, setPerson}) => {
   return (
-    <View style={{width:width-65}}>
+    <View style={styles.inputView}>
       <TextInput
         style={styles.input}
         placeholder="نام را وارد کنید"
@@ -23,15 +22,3 @@ const AddPerson = ({submitHandler, person, setPerson}) => {
 };
 
 export default AddPerson;
-
-const styles = StyleSheet.create({
-  input: {
-    backgroundColor: 'white',
-    borderBottomWidth: 1,
-    borderColor: 'orangered',
-    borderRadius: 4,
-    paddingHorizontal: 15,
-    color: 'black',
-    marginBottom: 10,
-  },
-});

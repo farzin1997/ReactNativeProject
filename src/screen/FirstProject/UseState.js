@@ -1,16 +1,20 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
+
+const {width, height} = Dimensions.get('window');
 
 const UseState = () => {
   const [react, setReact] = useState('React Native');
   const [flutter, setFlutter] = useState('Flutter');
-  const [click, setClick] = useState(true);
-  const [click2, setClick2] = useState(false);
   const [routerTab, setRouterTab] = useState(0);
 
   return (
     <View style={styles.container}>
-      <Text style={{color: 'black', fontSize: 16}}>
+      <Image
+        source={require('../../assets/image/duck.png')}
+        style={styles.imageHeader}
+      />
+      <Text style={styles.title}>
         به نظر شما react native بهتره یا flutter؟
       </Text>
       <View style={styles.row}>
@@ -37,19 +41,24 @@ const UseState = () => {
           {flutter}
         </Text>
       </View>
-      {routerTab == 1 && <Text style={{color:'darkblue'}}>{react}  خب قطعا  </Text>}
-      {routerTab == 2 && <Text style={{color:'darkred'}}>{flutter} خب قطعا</Text>}
-      {/* <Text
-        onPress={() => setClick(!click)}
-        style={[
-          styles.text,
-          {
-            backgroundColor: click ? 'skyblue' : 'gold',
-            borderColor: click ? 'blue' : 'darkorange',
-          },
-        ]}>
-        {click ? 'React Native' : 'Flutter'}
-      </Text> */}
+      {routerTab == 1 && (
+        <>
+          <Text style={{color: 'darkblue'}}>{react} خب قطعا </Text>
+          <Image
+            source={require('../../assets/image/react.png')}
+            style={styles.imageReact}
+          />
+        </>
+      )}
+      {routerTab == 2 && (
+        <>
+          <Text style={{color: 'darkred'}}>{flutter} خب قطعا</Text>
+          <Image
+            source={require('../../assets/image/flutter.png')}
+            style={styles.imageflutter}
+          />
+        </>
+      )}
     </View>
   );
 };
@@ -60,7 +69,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'white',
   },
   text: {
     width: 150,
@@ -78,5 +87,26 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-evenly',
+  },
+  title: {
+    color: 'black',
+    fontSize: 16,
+    fontFamily: 'byekan',
+  },
+  imageHeader: {
+    width: 150,
+    height: 150,
+    marginVertical: 10,
+    borderRadius: 25,
+  },
+  imageReact: {
+    width: 150,
+    height: 150,
+    marginVertical: 10,
+  },
+  imageflutter: {
+    width: 120,
+    height: 120,
+    marginVertical: 20,
   },
 });

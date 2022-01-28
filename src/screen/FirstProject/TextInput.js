@@ -9,20 +9,14 @@ const TextInputs = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          width: width / 2,
-          backgroundColor: 'gold',
-          borderRadius: 4,
-          padding: 10,
-        }}>
+      <View style={styles.showName}>
         <Text style={styles.label}>نام : {name}</Text>
         <Text style={styles.label}>سن : {age}</Text>
       </View>
       <View style={styles.row}>
         <Text style={styles.label}>نام :</Text>
         <TextInput
-          style={{textAlign: 'right'}}
+          style={styles.input}
           placeholder="نام خود را وارد کنید"
           value={name}
           onChangeText={setName}
@@ -31,7 +25,7 @@ const TextInputs = ({navigation}) => {
       <View style={styles.row}>
         <Text style={styles.label}>سن :</Text>
         <TextInput
-          style={{textAlign: 'right'}}
+          style={styles.input}
           onChangeText={value => setAge(value)}
           placeholder="سن خود را وارد کنید"
           keyboardType="numeric"
@@ -53,7 +47,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row-reverse',
     alignItems: 'center',
-    width: width / 2,
+    width: width / 1.5,
     paddingHorizontal: 10,
     marginVertical: 10,
     borderWidth: 1,
@@ -63,7 +57,19 @@ const styles = StyleSheet.create({
   label: {
     color: 'black',
     fontSize: 15,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     textAlign: 'right',
+    fontFamily: 'byekan',
+  },
+  showName: {
+    width: width / 1.5,
+    backgroundColor: 'gold',
+    borderRadius: 4,
+    padding: 10,
+  },
+  input: {
+    textAlign: 'right',
+    fontFamily: 'byekan',
+    width: 200,
   },
 });

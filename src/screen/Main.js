@@ -9,7 +9,7 @@ const Main = ({navigation}) => {
   const [list, setList] = useState([
     {id: 1, title: 'first practice', onPress: 'First'},
     {id: 2, title: 'Person manager', onPress: 'PersonManager'},
-    {id: 2, title: 'تقویم', onPress: ''},
+    {id: 2, title: 'تقویم', onPress: 'Calender'},
     {id: 3, title: 'مپ'},
     {id: 4, title: 'چند زبانه'},
     {id: 5, title: 'redux'},
@@ -66,5 +66,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     elevation: 3,
     paddingVertical: 5,
+    fontFamily: 'byekan',
   },
 });

@@ -5,12 +5,13 @@ import Btn from '../../components/Btn';
 import UseState from './UseState';
 import TextInput from './TextInput';
 import ScrollViews from './ScrollViews';
+import SectionLists from './SectionLists';
 const {width, height} = Dimensions.get('window');
 const First = ({navigation}) => {
   const [routerTab, setRouterTab] = useState(0);
   return (
     <View style={{flex: 1}}>
-      <Header headerText={'First practice'} onPress={() => navigation.goBack()} />
+      <Header headerText={'اولین تمرین'} onPress={() => navigation.goBack()} />
       <View style={styles.customTab}>
         <Btn
           color={routerTab == 1 ? 'white' : 'black'}
@@ -32,17 +33,27 @@ const First = ({navigation}) => {
         />
         <Btn
           color={routerTab == 3 ? 'white' : 'black'}
-          value={'ScrollView'}
+          value={'FlatList'}
           otherStyles={[
             styles.btn,
             {backgroundColor: routerTab == 3 ? 'green' : 'hotpink'},
           ]}
           onPress={() => setRouterTab(3)}
         />
+        <Btn
+          color={routerTab == 4 ? 'white' : 'black'}
+          value={'SctionList'}
+          otherStyles={[
+            styles.btn,
+            {backgroundColor: routerTab == 4 ? 'green' : 'hotpink'},
+          ]}
+          onPress={() => setRouterTab(4)}
+        />
       </View>
       {routerTab == 1 && <UseState />}
       {routerTab == 2 && <TextInput />}
       {routerTab == 3 && <ScrollViews />}
+      {routerTab == 4 && <SectionLists />}
     </View>
   );
 };
@@ -51,7 +62,7 @@ export default First;
 
 const styles = StyleSheet.create({
   btn: {
-    width: width / 3.5,
+    width: width / 4.5,
     backgroundColor: 'hotpink',
   },
   body: {

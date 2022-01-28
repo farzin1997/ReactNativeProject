@@ -6,9 +6,9 @@ import {
   Dimensions,
   View,
   FlatList,
+  Pressable
 } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
-import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const {width, height} = Dimensions.get('window');
 

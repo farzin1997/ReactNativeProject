@@ -1,16 +1,7 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Dimensions,
-  Pressable,
-  Alert,
-} from 'react-native';
+import {Text, TouchableOpacity, Pressable, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
-
-const {width, height} = Dimensions.get('window');
+import {styles} from './style/globalStyles';
 
 const Persons = ({person, deleted, completed}) => {
   return (
@@ -39,24 +30,3 @@ const Persons = ({person, deleted, completed}) => {
 };
 
 export default Persons;
-
-const styles = StyleSheet.create({
-  person: {
-    flexDirection: 'row-reverse',
-    justifyContent: 'space-between',
-    alignItem: 'center',
-    paddingHorizontal: 25,
-    borderWidth: 1,
-    width: width - 65,
-    alignItems: 'center',
-    borderStyle: 'dashed',
-    borderColor: 'orangered',
-    paddingVertical: 10,
-    marginVertical: 5,
-    borderRadius: 9,
-    backgroundColor: 'white',
-  },
-  personIndex: {
-    color: 'red',
-  },
-});

@@ -12,7 +12,7 @@ const Btn = ({
     <Pressable
       onPress={onPress}
       style={[styles.buttons, {backgroundColor}, otherStyles]}>
-      <Text style={{color}}>{value}</Text>
+      <Text style={{color, fontFamily: 'byekan'}}>{value}</Text>
     </Pressable>
   );
 };
