@@ -9,27 +9,21 @@ const Main = ({navigation}) => {
   const [list, setList] = useState([
     {id: 1, title: 'first practice', onPress: 'First'},
     {id: 2, title: 'Person manager', onPress: 'PersonManager'},
-    {id: 2, title: 'تقویم', onPress: 'Calender'},
-    {id: 3, title: 'مپ'},
-    {id: 4, title: 'چند زبانه'},
-    {id: 5, title: 'redux'},
-    {id: 6, title: 'context'},
-    {id: 7, title: 'graphQl'},
-    {id: 8, title: 'restfullApi'},
-    {id: 8, title: 'tic tac toe'},
-    {id: 8, title: 'chat'},
+    {id: 3, title: 'navigation', onPress: 'Home'},
+    {id: 4, title: 'تقویم', onPress: 'Calender'},
+    {id: 5, title: 'مپ'},
+    {id: 6, title: 'چند زبانه'},
+    {id: 7, title: 'redux'},
+    {id: 8, title: 'context'},
+    {id: 9, title: 'graphQl'},
+    {id: 10, title: 'restfullApi'},
+    {id: 11, title: 'tic tac toe'},
+    {id: 12, title: 'chat'},
   ]);
   return (
     <View style={styles.container}>
       <View>
-        <Text
-          onPress={() => setIsSelected(!isSelected)}
-          style={[
-            styles.headerText,
-            {backgroundColor: isSelected ? 'lightgreen' : 'pink'},
-          ]}>
-          تمرین ها
-        </Text>
+        <Text style={styles.headerText}>تمرین ها</Text>
       </View>
       <View style={{width: width, alignItems: 'center'}}>
         <FlatList
@@ -67,5 +61,6 @@ const styles = StyleSheet.create({
     elevation: 3,
     paddingVertical: 5,
     fontFamily: 'byekan',
+    backgroundColor:'pink'
   },
 });

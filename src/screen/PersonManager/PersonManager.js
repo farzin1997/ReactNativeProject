@@ -48,6 +48,7 @@ const PersonManager = ({navigation}) => {
     allPersons[personIndex] = person;
 
     setPerson(allPersons);
+
   };
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
